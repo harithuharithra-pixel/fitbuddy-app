@@ -1,0 +1,630 @@
+<!DOCTYPE html>
+<html lang="en" class="dark">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>FitBuddy UI/UX Design Showcase & Prototype</title>
+    <!-- Tailwind CSS CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            darkMode: 'class',
+            theme: {
+                extend: {
+                    colors: {
+                        brand: {
+                            50: '#fff7ed',
+                            500: '#f97316',
+                            600: '#ea580c',
+                            cyan: '#06b6d4',
+                            neon: '#22c55e',
+                            purple: '#a855f7',
+                            darkBg: '#090d16',
+                            card: '#0f172a',
+                            border: '#1e293b'
+                        }
+                    },
+                    fontFamily: {
+                        sans: ['Plus Jakarta Sans', 'sans-serif'],
+                        display: ['Space Grotesk', 'sans-serif'],
+                        mono: ['JetBrains Mono', 'monospace']
+                    }
+                }
+            }
+        }
+    </script>
+    <!-- FontAwesome & Google Fonts -->
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&family=Space+Grotesk:wght@500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="css/styles.css">
+</head>
+<body class="min-h-screen bg-grid-pattern flex flex-col justify-between custom-scrollbar selection:bg-orange-500 selection:text-white">
+
+    <header class="sticky top-0 z-50 backdrop-blur-xl border-b border-slate-800/80 dark:bg-slate-950/80 light:bg-white/80">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-20 flex items-center justify-between">
+            <div class="flex items-center gap-3">
+                <div class="w-11 h-11 rounded-xl bg-gradient-to-tr from-orange-600 via-amber-500 to-cyan-400 p-0.5 flex items-center justify-center glow-orange">
+                    <div class="w-full h-full dark:bg-slate-950 light:bg-white rounded-[10px] flex items-center justify-center">
+                        <i class="fa-solid fa-dumbbell text-xl text-orange-500"></i>
+                    </div>
+                </div>
+                <div>
+                    <div class="flex items-center gap-2">
+                        <span class="font-display text-2xl font-extrabold tracking-tight dark:text-white light:text-slate-900">FitBuddy</span>
+                        <span class="px-2 py-0.5 text-[10px] font-bold uppercase tracking-wider text-orange-400 bg-orange-500/10 border border-orange-500/20 rounded-md">UI/UX Showcase</span>
+                    </div>
+                    <p class="text-[11px] text-slate-400">Design System & Interactive AI Fitness Prototype</p>
+                </div>
+            </div>
+
+            <!-- Page Navigation Tabs -->
+            <nav class="hidden md:flex items-center gap-1 bg-slate-900/50 light:bg-slate-100 p-1 rounded-xl border border-slate-800 light:border-slate-200">
+                <button onclick="switchMainTab('showcase')" id="tabBtn-showcase" class="px-4 py-2 rounded-lg text-xs font-semibold transition-all flex items-center gap-2 bg-orange-500 text-white shadow-md">
+                    <i class="fa-solid fa-palette text-xs"></i>
+                    <span>Design System & UX</span>
+                </button>
+                <button onclick="switchMainTab('prototype')" id="tabBtn-prototype" class="px-4 py-2 rounded-lg text-xs font-semibold transition-all flex items-center gap-2 text-slate-400 hover:text-slate-200">
+                    <i class="fa-solid fa-laptop-code text-xs"></i>
+                    <span>Interactive Prototype</span>
+                    <span class="w-2 h-2 rounded-full bg-cyan-400 animate-pulse"></span>
+                </button>
+            </nav>
+
+            <!-- Mode Switcher & Controls -->
+            <div class="flex items-center gap-3">
+                <button onclick="toggleTheme()" class="p-2.5 rounded-xl border border-slate-800 light:border-slate-200 dark:bg-slate-900 light:bg-white text-slate-300 dark:hover:text-amber-400 light:hover:text-orange-500 transition-colors" title="Toggle Light/Dark Theme">
+                    <i id="themeIcon" class="fa-solid fa-moon text-sm"></i>
+                </button>
+                <button onclick="switchMainTab('prototype')" class="px-4 py-2.5 rounded-xl bg-gradient-to-r from-orange-500 to-amber-500 text-white text-xs font-bold shadow-lg glow-orange flex items-center gap-2">
+                    <span>Launch App</span>
+                    <i class="fa-solid fa-arrow-right"></i>
+                </button>
+            </div>
+        </div>
+    </header>
+
+    <main class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8 flex-1 w-full space-y-12">
+
+        <!-- ========================================== -->
+        <!-- VIEW 1: DESIGN SYSTEM & CASE STUDY SHOWCASE -->
+        <!-- ========================================== -->
+        <section id="view-showcase" class="space-y-12">
+            
+            <!-- Hero Banner -->
+            <div class="relative rounded-3xl overflow-hidden glass-panel p-8 md:p-12 border border-slate-800">
+                <div class="absolute -right-20 -bottom-20 w-80 h-80 bg-orange-500/10 rounded-full blur-3xl pointer-events-none"></div>
+                <div class="absolute -left-20 -top-20 w-80 h-80 bg-cyan-500/10 rounded-full blur-3xl pointer-events-none"></div>
+
+                <div class="relative z-10 max-w-3xl space-y-6">
+                    <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-orange-500/10 border border-orange-500/20 text-orange-400 text-xs font-semibold">
+                        <i class="fa-solid fa-wand-magic-sparkles"></i> AI-Powered Fitness Experience Redesign
+                    </div>
+                    <h1 class="text-3xl sm:text-5xl font-extrabold font-display tracking-tight leading-tight">
+                        Crafting a Modern, Adaptive <span class="bg-gradient-to-r from-orange-400 via-amber-400 to-cyan-400 bg-clip-text text-transparent">AI Fitness Companion</span>
+                    </h1>
+                    <p class="text-slate-400 text-sm sm:text-base leading-relaxed">
+                        A human-centered UI/UX design case study for <strong>FitBuddy</strong>. Engineered with neon glassmorphism aesthetic, intuitive progress feedback loops, dynamic exercise customization, and trainer dashboard management.
+                    </p>
+
+                    <!-- Stat Pill Badges -->
+                    <div class="grid grid-cols-2 sm:grid-cols-4 gap-4 pt-4 border-t border-slate-800/80">
+                        <div class="p-3 rounded-xl bg-slate-900/50 light:bg-slate-100 border border-slate-800/50 light:border-slate-200">
+                            <span class="block text-xl font-extrabold text-orange-400 font-display">98.4%</span>
+                            <span class="text-[11px] text-slate-400">Plan Satisfaction</span>
+                        </div>
+                        <div class="p-3 rounded-xl bg-slate-900/50 light:bg-slate-100 border border-slate-800/50 light:border-slate-200">
+                            <span class="block text-xl font-extrabold text-cyan-400 font-display">&lt; 1.5s</span>
+                            <span class="text-[11px] text-slate-400">AI Plan Generation</span>
+                        </div>
+                        <div class="p-3 rounded-xl bg-slate-900/50 light:bg-slate-100 border border-slate-800/50 light:border-slate-200">
+                            <span class="block text-xl font-extrabold text-green-400 font-display">4.9 / 5</span>
+                            <span class="text-[11px] text-slate-400">Usability Score</span>
+                        </div>
+                        <div class="p-3 rounded-xl bg-slate-900/50 light:bg-slate-100 border border-slate-800/50 light:border-slate-200">
+                            <span class="block text-xl font-extrabold text-purple-400 font-display">100%</span>
+                            <span class="text-[11px] text-slate-400">Responsive Layout</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- SECTION: Design System & Tokens Showcase -->
+            <div class="space-y-6">
+                <div class="border-b border-slate-800 pb-4 flex items-center justify-between">
+                    <div>
+                        <h2 class="text-2xl font-bold font-display text-white light:text-slate-900 flex items-center gap-2">
+                            <i class="fa-solid fa-swatchbook text-orange-500"></i> Design Tokens & Style Guide
+                        </h2>
+                        <p class="text-xs text-slate-400">Typography, color palettes, and UI component foundations.</p>
+                    </div>
+                    <span class="text-xs font-mono text-cyan-400 bg-cyan-500/10 px-3 py-1 rounded-full border border-cyan-500/20">Design System v2.5</span>
+                </div>
+
+                <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+                    
+                    <!-- Color Tokens -->
+                    <div class="glass-panel rounded-2xl p-6 space-y-4">
+                        <h3 class="text-sm font-bold uppercase tracking-wider text-slate-400 flex items-center gap-2">
+                            <i class="fa-solid fa-droplet text-orange-400"></i> Color Palette
+                        </h3>
+                        <div class="grid grid-cols-2 gap-3">
+                            <div class="p-3 rounded-xl bg-orange-500 text-white space-y-1 shadow-md">
+                                <span class="block text-xs font-bold">Primary Orange</span>
+                                <span class="font-mono text-[10px] opacity-80">#F97316</span>
+                            </div>
+                            <div class="p-3 rounded-xl bg-cyan-500 text-white space-y-1 shadow-md">
+                                <span class="block text-xs font-bold">Neon Cyan</span>
+                                <span class="font-mono text-[10px] opacity-80">#06B6D4</span>
+                            </div>
+                            <div class="p-3 rounded-xl bg-green-500 text-white space-y-1 shadow-md">
+                                <span class="block text-xs font-bold">Success Green</span>
+                                <span class="font-mono text-[10px] opacity-80">#22C55E</span>
+                            </div>
+                            <div class="p-3 rounded-xl bg-slate-900 border border-slate-700 text-white space-y-1 shadow-md">
+                                <span class="block text-xs font-bold">Dark Canvas</span>
+                                <span class="font-mono text-[10px] opacity-80">#090D16</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Typography Scale -->
+                    <div class="glass-panel rounded-2xl p-6 space-y-4">
+                        <h3 class="text-sm font-bold uppercase tracking-wider text-slate-400 flex items-center gap-2">
+                            <i class="fa-solid fa-font text-cyan-400"></i> Typography Hierarchy
+                        </h3>
+                        <div class="space-y-3">
+                            <div>
+                                <span class="text-[10px] text-slate-500 font-mono">Display / Space Grotesk</span>
+                                <div class="font-display font-bold text-xl text-white light:text-slate-900">7-Day Workout Routine</div>
+                            </div>
+                            <div>
+                                <span class="text-[10px] text-slate-500 font-mono">Body / Plus Jakarta Sans</span>
+                                <div class="text-xs text-slate-300 light:text-slate-700">Adaptive AI plan designed for optimal muscle hypertrophy and recovery balance.</div>
+                            </div>
+                            <div>
+                                <span class="text-[10px] text-slate-500 font-mono">Code & Metrics / JetBrains Mono</span>
+                                <div class="font-mono text-xs text-orange-400">SETS: 4 | REPS: 10-12 | REST: 60s</div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Component Library Showcase -->
+                    <div class="glass-panel rounded-2xl p-6 space-y-4">
+                        <h3 class="text-sm font-bold uppercase tracking-wider text-slate-400 flex items-center gap-2">
+                            <i class="fa-solid fa-cube text-green-400"></i> Micro-Components
+                        </h3>
+                        <div class="space-y-3">
+                            <!-- Buttons -->
+                            <div class="flex flex-wrap gap-2">
+                                <button class="px-3 py-1.5 rounded-lg bg-orange-500 text-white text-xs font-bold shadow-md glow-orange">Primary</button>
+                                <button class="px-3 py-1.5 rounded-lg bg-slate-800 text-slate-300 text-xs font-semibold border border-slate-700">Secondary</button>
+                                <button class="px-3 py-1.5 rounded-lg bg-cyan-500/10 text-cyan-400 text-xs font-semibold border border-cyan-500/20">Badge</button>
+                            </div>
+                            <!-- Badges & Inputs -->
+                            <div class="flex items-center gap-2">
+                                <span class="px-2.5 py-1 text-[10px] font-bold bg-green-500/10 border border-green-500/20 text-green-400 rounded-md">🟢 Active</span>
+                                <span class="px-2.5 py-1 text-[10px] font-bold bg-amber-500/10 border border-amber-500/20 text-amber-400 rounded-md">🟠 In Progress</span>
+                                <span class="px-2.5 py-1 text-[10px] font-bold bg-red-500/10 border border-red-500/20 text-red-400 rounded-md">🔴 High Intensity</span>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+
+            <div class="space-y-6">
+                <div class="border-b border-slate-800 pb-4">
+                    <h2 class="text-2xl font-bold font-display text-white light:text-slate-900 flex items-center gap-2">
+                        <i class="fa-solid fa-user-astronaut text-cyan-400"></i> User Persona & Journey Mapping
+                    </h2>
+                    <p class="text-xs text-slate-400">Understanding user needs, friction points, and end-to-end task flows.</p>
+                </div>
+
+                <div class="grid grid-cols-1 lg:grid-cols-12 gap-8 items-start">
+                    <!-- Persona Card -->
+                    <div class="lg:col-span-4 glass-panel rounded-2xl p-6 space-y-4">
+                        <div class="flex items-center gap-4 border-b border-slate-800/80 pb-4">
+                            <div class="w-14 h-14 rounded-2xl bg-gradient-to-tr from-orange-500 to-amber-400 p-0.5 flex items-center justify-center">
+                                <div class="w-full h-full dark:bg-slate-950 light:bg-slate-100 rounded-[14px] flex items-center justify-center text-orange-400 font-bold text-lg font-display">
+                                    AR
+                                </div>
+                            </div>
+                            <div>
+                                <h3 class="text-base font-bold text-white light:text-slate-900">Alex Rivera, 26</h3>
+                                <p class="text-xs text-slate-400">Software Engineer • Fitness Enthusiast</p>
+                                <span class="inline-block mt-1 px-2 py-0.5 text-[10px] font-bold bg-cyan-500/10 text-cyan-400 border border-cyan-500/20 rounded">Goal: Hypertrophy & Fat Loss</span>
+                            </div>
+                        </div>
+
+                        <div class="space-y-3 text-xs">
+                            <div>
+                                <strong class="text-slate-300 light:text-slate-700 block mb-1">Frustrations:</strong>
+                                <ul class="list-disc list-inside text-slate-400 space-y-1">
+                                    <li>Generic PDF plans lack flexibility.</li>
+                                    <li>No easy way to request exercise swaps.</li>
+                                    <li>Hard to track weekly progress visually.</li>
+                                </ul>
+                            </div>
+                            <div>
+                                <strong class="text-slate-300 light:text-slate-700 block mb-1">Needs:</strong>
+                                <p class="text-slate-400">A responsive app that creates personalized schedules instantly and allows AI refinement on demand.</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Journey Map Cards -->
+                    <div class="lg:col-span-8 grid grid-cols-1 sm:grid-cols-2 gap-4">
+                        <div class="p-5 rounded-2xl bg-slate-900/60 light:bg-white border border-slate-800 light:border-slate-200 space-y-2">
+                            <div class="w-8 h-8 rounded-lg bg-orange-500/10 text-orange-400 flex items-center justify-center font-bold text-xs font-mono">01</div>
+                            <h4 class="text-sm font-bold text-white light:text-slate-900">Input Metrics</h4>
+                            <p class="text-xs text-slate-400">User inputs personal age, weight, goal, and preferred workout intensity.</p>
+                        </div>
+                        <div class="p-5 rounded-2xl bg-slate-900/60 light:bg-white border border-slate-800 light:border-slate-200 space-y-2">
+                            <div class="w-8 h-8 rounded-lg bg-cyan-500/10 text-cyan-400 flex items-center justify-center font-bold text-xs font-mono">02</div>
+                            <h4 class="text-sm font-bold text-white light:text-slate-900">View Dynamic Plan</h4>
+                            <p class="text-xs text-slate-400">Instant 7-day breakdown generated with interactive exercise checkboxes.</p>
+                        </div>
+                        <div class="p-5 rounded-2xl bg-slate-900/60 light:bg-white border border-slate-800 light:border-slate-200 space-y-2">
+                            <div class="w-8 h-8 rounded-lg bg-green-500/10 text-green-400 flex items-center justify-center font-bold text-xs font-mono">03</div>
+                            <h4 class="text-sm font-bold text-white light:text-slate-900">AI Feedback Loop</h4>
+                            <p class="text-xs text-slate-400">Submit requests like "Add more core exercises" and receive immediate plan revisions.</p>
+                        </div>
+                        <div class="p-5 rounded-2xl bg-slate-900/60 light:bg-white border border-slate-800 light:border-slate-200 space-y-2">
+                            <div class="w-8 h-8 rounded-lg bg-purple-500/10 text-purple-400 flex items-center justify-center font-bold text-xs font-mono">04</div>
+                            <h4 class="text-sm font-bold text-white light:text-slate-900">Admin Sync</h4>
+                            <p class="text-xs text-slate-400">Trainers monitor compliance, user goals, and updated routines in real time.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="glass-panel rounded-3xl p-8 border border-slate-800 space-y-6">
+                <div class="border-b border-slate-800 pb-4 flex items-center justify-between">
+                    <div>
+                        <h2 class="text-xl font-bold font-display text-white light:text-slate-900 flex items-center gap-2">
+                            <i class="fa-solid fa-sitemap text-orange-500"></i> Architecture Logic & Usability Principles
+                        </h2>
+                        <p class="text-xs text-slate-400">System architecture flow and Jakob Nielsen usability heuristic alignment.</p>
+                    </div>
+                </div>
+
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+                    <!-- Flow Diagram -->
+                    <div class="space-y-3">
+                        <h3 class="text-xs font-bold uppercase text-slate-400 tracking-wider">System Flow Diagram</h3>
+                        <div class="p-4 rounded-2xl bg-slate-950 border border-slate-800 font-mono text-[11px] text-slate-300 space-y-3">
+                            <div class="p-2 rounded bg-slate-900 border border-slate-800 text-center text-orange-400">[ User Input Form ]</div>
+                            <div class="text-center text-slate-600">↓ (HTTP POST Payload)</div>
+                            <div class="p-2 rounded bg-slate-900 border border-slate-800 text-center text-cyan-400">[ FastAPI Backend Engine ]</div>
+                            <div class="text-center text-slate-600">↓ (Structured Prompt)</div>
+                            <div class="p-2 rounded bg-slate-900 border border-slate-800 text-center text-green-400">[ Gemini 1.5 Flash API Model ]</div>
+                            <div class="text-center text-slate-600">↓ (Valid JSON Output)</div>
+                            <div class="p-2 rounded bg-slate-900 border border-slate-800 text-center text-purple-400">[ LocalStorage & Admin SQLite Sync ]</div>
+                        </div>
+                    </div>
+
+                    <!-- Heuristics Table -->
+                    <div class="space-y-3">
+                        <h3 class="text-xs font-bold uppercase text-slate-400 tracking-wider">UX Heuristics Implemented</h3>
+                        <div class="space-y-2 text-xs">
+                            <div class="p-3 rounded-xl bg-slate-900/60 light:bg-slate-100 border border-slate-800/80 light:border-slate-200">
+                                <strong class="text-orange-400 block mb-0.5">Visibility of System Status:</strong>
+                                <span class="text-slate-400">Interactive completion progress bars and real-time generation spinners keep users informed.</span>
+                            </div>
+                            <div class="p-3 rounded-xl bg-slate-900/60 light:bg-slate-100 border border-slate-800/80 light:border-slate-200">
+                                <strong class="text-cyan-400 block mb-0.5">User Control & Freedom:</strong>
+                                <span class="text-slate-400">One-click plan revisions, instant clear triggers, and easy export options.</span>
+                            </div>
+                            <div class="p-3 rounded-xl bg-slate-900/60 light:bg-slate-100 border border-slate-800/80 light:border-slate-200">
+                                <strong class="text-green-400 block mb-0.5">Flexibility & Efficiency:</strong>
+                                <span class="text-slate-400">Custom API Key override alongside high-speed simulated generator fallback.</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+        </section>
+
+
+        <!-- ========================================== -->
+        <!-- VIEW 2: INTERACTIVE APPLICATION PROTOTYPE -->
+        <!-- ========================================== -->
+        <section id="view-prototype" class="hidden space-y-8">
+            
+            <!-- Sub-Navigation Toolbar -->
+            <div class="flex flex-col sm:flex-row items-center justify-between gap-4 glass-panel p-4 rounded-2xl border border-slate-800">
+                <div class="flex items-center gap-2">
+                    <span class="w-3 h-3 rounded-full bg-green-500 animate-ping"></span>
+                    <span class="text-xs font-bold text-white light:text-slate-900 font-display">Live Prototype Mode</span>
+                    <span class="text-xs text-slate-400">| Switch screens to experience full app workflow</span>
+                </div>
+
+                <div class="flex items-center gap-1.5 bg-slate-950 light:bg-slate-200 p-1 rounded-xl border border-slate-800 light:border-slate-300">
+                    <button onclick="switchProtoScreen('screen-form')" id="protoNav-form" class="px-3 py-1.5 rounded-lg text-xs font-bold transition-all bg-orange-500 text-white">
+                        1. Generator Form
+                    </button>
+                    <button onclick="switchProtoScreen('screen-plan')" id="protoNav-plan" class="px-3 py-1.5 rounded-lg text-xs font-bold transition-all text-slate-400 hover:text-white">
+                        2. My Plan
+                    </button>
+                    <button onclick="switchProtoScreen('screen-admin')" id="protoNav-admin" class="px-3 py-1.5 rounded-lg text-xs font-bold transition-all text-slate-400 hover:text-white">
+                        3. Admin Dashboard
+                    </button>
+                </div>
+            </div>
+
+            <!-- PROTOTYPE SCREEN 1: GENERATOR FORM -->
+            <div id="protoScreen-form" class="grid grid-cols-1 lg:grid-cols-12 gap-8 items-start">
+                
+                <!-- Left Input Form -->
+                <div class="lg:col-span-5 glass-panel rounded-3xl p-6 sm:p-8 space-y-6">
+                    <div class="border-b border-slate-800 pb-4">
+                        <h3 class="text-xl font-bold font-display text-white light:text-slate-900 flex items-center gap-2">
+                            <i class="fa-solid fa-sliders text-orange-500"></i> Fitness Profile Input
+                        </h3>
+                        <p class="text-xs text-slate-400 mt-1">Provide your physical metrics for custom plan generation.</p>
+                    </div>
+
+                    <form id="protoPlanForm" onsubmit="handleProtoGenerate(event)" class="space-y-5">
+                        
+                        <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+                            <div>
+                                <label class="block text-xs font-semibold text-slate-300 light:text-slate-700 uppercase tracking-wider mb-2">Full Name</label>
+                                <input type="text" id="inputName" required value="Alex Rivera" placeholder="John Doe" 
+                                    class="w-full px-4 py-2.5 bg-slate-950 light:bg-white border border-slate-800 light:border-slate-300 rounded-xl text-sm text-white light:text-slate-900 focus:outline-none focus:border-orange-500 transition-colors">
+                            </div>
+                            <div>
+                                <label class="block text-xs font-semibold text-slate-300 light:text-slate-700 uppercase tracking-wider mb-2">User Handle</label>
+                                <input type="text" id="inputUserId" required value="alex_fit" placeholder="john_fit" 
+                                    class="w-full px-4 py-2.5 bg-slate-950 light:bg-white border border-slate-800 light:border-slate-300 rounded-xl text-sm text-white light:text-slate-900 focus:outline-none focus:border-orange-500 transition-colors">
+                            </div>
+                        </div>
+
+                        <div class="grid grid-cols-2 gap-4">
+                            <div>
+                                <label class="block text-xs font-semibold text-slate-300 light:text-slate-700 uppercase tracking-wider mb-2">Age (Years)</label>
+                                <input type="number" id="inputAge" min="14" max="90" required value="26"
+                                    class="w-full px-4 py-2.5 bg-slate-950 light:bg-white border border-slate-800 light:border-slate-300 rounded-xl text-sm text-white light:text-slate-900 focus:outline-none focus:border-orange-500 transition-colors">
+                            </div>
+                            <div>
+                                <label class="block text-xs font-semibold text-slate-300 light:text-slate-700 uppercase tracking-wider mb-2">Weight (kg)</label>
+                                <input type="number" id="inputWeight" min="30" max="250" required value="74"
+                                    class="w-full px-4 py-2.5 bg-slate-950 light:bg-white border border-slate-800 light:border-slate-300 rounded-xl text-sm text-white light:text-slate-900 focus:outline-none focus:border-orange-500 transition-colors">
+                            </div>
+                        </div>
+
+                        <div>
+                            <label class="block text-xs font-semibold text-slate-300 light:text-slate-700 uppercase tracking-wider mb-2">Primary Fitness Target</label>
+                            <select id="inputGoal" required class="w-full px-4 py-2.5 bg-slate-950 light:bg-white border border-slate-800 light:border-slate-300 rounded-xl text-sm text-white light:text-slate-900 focus:outline-none focus:border-orange-500 transition-colors">
+                                <option value="Muscle Gain" selected>💪 Muscle Gain & Hypertrophy</option>
+                                <option value="Weight Loss">🔥 Fat Loss & Lean Shred</option>
+                                <option value="Flexibility & Core">🧘 Core Stability & Mobility</option>
+                                <option value="General Fitness">⚡ Endurance & Functional Health</option>
+                            </select>
+                        </div>
+
+                        <div>
+                            <label class="block text-xs font-semibold text-slate-300 light:text-slate-700 uppercase tracking-wider mb-2">Workout Intensity</label>
+                            <div class="grid grid-cols-3 gap-3">
+                                <label class="cursor-pointer">
+                                    <input type="radio" name="intensity" value="Low" class="peer sr-only">
+                                    <div class="py-2.5 px-3 text-center rounded-xl bg-slate-950 light:bg-slate-100 border border-slate-800 light:border-slate-300 peer-checked:border-green-500 peer-checked:bg-green-500/10 peer-checked:text-green-400 text-slate-400 text-xs font-bold transition-all">
+                                        Low 🟢
+                                    </div>
+                                </label>
+                                <label class="cursor-pointer">
+                                    <input type="radio" name="intensity" value="Medium" checked class="peer sr-only">
+                                    <div class="py-2.5 px-3 text-center rounded-xl bg-slate-950 light:bg-slate-100 border border-slate-800 light:border-slate-300 peer-checked:border-orange-500 peer-checked:bg-orange-500/10 peer-checked:text-orange-400 text-slate-400 text-xs font-bold transition-all">
+                                        Medium 🟠
+                                    </div>
+                                </label>
+                                <label class="cursor-pointer">
+                                    <input type="radio" name="intensity" value="High" class="peer sr-only">
+                                    <div class="py-2.5 px-3 text-center rounded-xl bg-slate-950 light:bg-slate-100 border border-slate-800 light:border-slate-300 peer-checked:border-red-500 peer-checked:bg-red-500/10 peer-checked:text-red-400 text-slate-400 text-xs font-bold transition-all">
+                                        High 🔴
+                                    </div>
+                                </label>
+                            </div>
+                        </div>
+
+                        <button type="submit" id="generateBtn" class="w-full py-3.5 px-6 rounded-xl bg-gradient-to-r from-orange-500 to-amber-500 text-white font-bold text-sm tracking-wide shadow-lg glow-orange flex items-center justify-center gap-2 transition-all">
+                            <i class="fa-solid fa-bolt"></i>
+                            <span>Generate Custom Plan</span>
+                        </button>
+                    </form>
+                </div>
+
+                <!-- Right Live Preview Card -->
+                <div class="lg:col-span-7 space-y-6">
+                    <div id="formLoadingState" class="hidden glass-panel rounded-3xl p-12 text-center space-y-4">
+                        <div class="inline-flex items-center justify-center w-16 h-16 rounded-full bg-orange-500/10 border border-orange-500/30 text-orange-500 animate-spin">
+                            <i class="fa-solid fa-circle-notch text-2xl"></i>
+                        </div>
+                        <h4 class="text-lg font-bold text-white light:text-slate-900 font-display">Generating AI Plan...</h4>
+                        <p class="text-xs text-slate-400">Synthesizing rep schemes, rest intervals, and warm-up routines.</p>
+                    </div>
+
+                    <div id="formPreviewCard" class="glass-panel rounded-3xl p-6 space-y-6">
+                        <div class="flex items-center justify-between border-b border-slate-800 pb-4">
+                            <div>
+                                <span class="text-xs font-bold uppercase tracking-wider text-orange-400">Generated Routine</span>
+                                <h3 id="prevTitle" class="text-xl font-bold font-display text-white light:text-slate-900">7-Day Muscle Gain Blueprint</h3>
+                                <p id="prevSubtitle" class="text-xs text-slate-400">Prepared for Alex Rivera (@alex_fit)</p>
+                            </div>
+                            <button onclick="confirmAndSavePlan()" class="px-4 py-2 bg-gradient-to-r from-cyan-500 to-blue-600 text-white rounded-xl font-bold text-xs flex items-center gap-2 shadow-md glow-cyan">
+                                <i class="fa-solid fa-floppy-disk"></i>
+                                <span>Save & Activate Plan</span>
+                            </button>
+                        </div>
+
+                        <!-- Nutrition Tip Banner -->
+                        <div class="p-4 rounded-xl bg-gradient-to-r from-cyan-950/40 to-slate-900 border border-cyan-500/30 flex items-start gap-3">
+                            <i class="fa-solid fa-apple-whole text-cyan-400 text-lg mt-0.5"></i>
+                            <div>
+                                <span class="text-[11px] font-extrabold uppercase tracking-wider text-cyan-400">Nutrition & Recovery Insight</span>
+                                <p id="prevNutrition" class="text-xs text-slate-300 mt-1">Aim for 2.0g protein per kg bodyweight. Stay hydrated with 3-4L water daily.</p>
+                            </div>
+                        </div>
+
+                        <!-- Mini Day Schedule Snippet -->
+                        <div id="prevDaysSnippet" class="space-y-2 max-h-[300px] overflow-y-auto custom-scrollbar">
+                            <!-- Populated dynamically -->
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+
+
+            <!-- PROTOTYPE SCREEN 2: ACTIVE PLAN & TRACKING -->
+            <div id="protoScreen-plan" class="hidden space-y-8">
+                
+                <!-- Plan Header Banner -->
+                <div class="glass-panel rounded-3xl p-6 md:p-8 flex flex-col md:flex-row items-start md:items-center justify-between gap-6">
+                    <div class="flex items-center gap-4">
+                        <div class="w-16 h-16 rounded-2xl bg-gradient-to-tr from-orange-500 to-amber-400 p-0.5 flex items-center justify-center shrink-0">
+                            <div class="w-full h-full dark:bg-slate-950 light:bg-slate-100 rounded-[14px] flex items-center justify-center text-orange-400 font-bold text-xl font-display" id="planUserInitials">
+                                AR
+                            </div>
+                        </div>
+                        <div>
+                            <div class="flex items-center gap-2">
+                                <h3 id="planUserName" class="text-2xl font-extrabold font-display text-white light:text-slate-900">Alex Rivera</h3>
+                                <span id="planUserHandle" class="text-xs px-2 py-0.5 bg-slate-800 text-slate-300 rounded-full font-mono">@alex_fit</span>
+                            </div>
+                            <div class="flex flex-wrap items-center gap-4 text-xs text-slate-400 mt-1">
+                                <span><i class="fa-solid fa-bullseye text-orange-500 mr-1"></i> <span id="planGoal">Muscle Gain</span></span>
+                                <span><i class="fa-solid fa-gauge-high text-orange-500 mr-1"></i> <span id="planIntensity">Medium Intensity</span></span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Progress Gauge Bar -->
+                    <div class="w-full md:w-64 space-y-2 bg-slate-900/60 p-4 rounded-2xl border border-slate-800">
+                        <div class="flex justify-between text-xs font-bold">
+                            <span class="text-slate-300">Weekly Progress</span>
+                            <span id="progressPercentText" class="text-orange-400 font-mono">0%</span>
+                        </div>
+                        <div class="w-full h-2.5 bg-slate-800 rounded-full overflow-hidden">
+                            <div id="progressBarFill" class="h-full bg-gradient-to-r from-orange-500 to-amber-400 transition-all duration-500 w-0"></div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- AI Refinement & Revision Trigger Box -->
+                <div class="glass-panel rounded-3xl p-6 border border-orange-500/30 space-y-4 glow-orange">
+                    <div class="flex items-center justify-between">
+                        <div class="flex items-center gap-3">
+                            <div class="p-2 bg-orange-500/10 text-orange-400 rounded-xl">
+                                <i class="fa-solid fa-wand-magic-sparkles text-lg"></i>
+                            </div>
+                            <div>
+                                <h4 class="text-base font-bold text-white light:text-slate-900">Request AI Routine Refinement</h4>
+                                <p class="text-xs text-slate-400">Submit requests like "Replace leg exercises with bodyweight variations".</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <form onsubmit="handlePlanRevision(event)" class="flex gap-3">
+                        <input type="text" id="revisionPrompt" required placeholder="E.g. Add 15 minutes of core/abs at the end of every workout..." 
+                            class="flex-1 px-4 py-3 bg-slate-950 light:bg-white border border-slate-800 light:border-slate-300 rounded-xl text-xs text-white light:text-slate-900 focus:outline-none focus:border-orange-500">
+                        <button type="submit" class="px-5 py-3 bg-orange-500 hover:bg-orange-600 text-white rounded-xl font-bold text-xs uppercase tracking-wider shrink-0 transition-colors">
+                            Update Plan
+                        </button>
+                    </form>
+                </div>
+
+                <!-- 7-Day Interactive Exercise Schedule Cards -->
+                <div id="interactiveDaysGrid" class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+                    <!-- Populated dynamically -->
+                </div>
+
+            </div>
+
+
+            <!-- PROTOTYPE SCREEN 3: ADMIN & TRAINER DASHBOARD -->
+            <div id="protoScreen-admin" class="hidden space-y-8">
+                
+                <div class="flex flex-col sm:flex-row sm:items-center justify-between gap-4 border-b border-slate-800 pb-6">
+                    <div>
+                        <h3 class="text-2xl font-extrabold font-display text-white light:text-slate-900 flex items-center gap-2">
+                            <i class="fa-solid fa-user-shield text-cyan-400"></i> Trainer & Admin Dashboard
+                        </h3>
+                        <p class="text-xs text-slate-400 mt-1">Manage user routines, view completion statistics, and inspect plan history.</p>
+                    </div>
+
+                    <!-- Search and Filters -->
+                    <div class="flex items-center gap-3">
+                        <input type="text" id="adminSearchInput" oninput="filterAdminTable()" placeholder="Search user or goal..." 
+                            class="px-4 py-2 bg-slate-950 light:bg-white border border-slate-800 light:border-slate-300 rounded-xl text-xs text-white light:text-slate-900 focus:outline-none focus:border-cyan-500">
+                        <button onclick="addDemoAdminRecords()" class="px-4 py-2 bg-slate-800 text-slate-300 text-xs font-semibold rounded-xl border border-slate-700 hover:bg-slate-700">
+                            + Add Sample Data
+                        </button>
+                    </div>
+                </div>
+
+                <!-- Table Container -->
+                <div class="glass-panel rounded-3xl overflow-hidden border border-slate-800">
+                    <div class="overflow-x-auto custom-scrollbar">
+                        <table class="w-full text-left border-collapse">
+                            <thead>
+                                <tr class="bg-slate-950/80 light:bg-slate-100 border-b border-slate-800 light:border-slate-300 text-[11px] font-extrabold uppercase tracking-wider text-slate-400">
+                                    <th class="py-4 px-6">User Handle</th>
+                                    <th class="py-4 px-6">Name & Age</th>
+                                    <th class="py-4 px-6">Fitness Goal</th>
+                                    <th class="py-4 px-6">Intensity</th>
+                                    <th class="py-4 px-6">Status</th>
+                                    <th class="py-4 px-6 text-right">Actions</th>
+                                </tr>
+                            </thead>
+                            <tbody id="adminTableBody" class="divide-y divide-slate-800/60 light:divide-slate-200 text-xs">
+                                <!-- Populated dynamically -->
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+
+            </div>
+
+        </section>
+
+    </main>
+
+    <div id="detailModal" class="fixed inset-0 z-50 hidden bg-slate-950/80 backdrop-blur-md flex items-center justify-center p-4">
+        <div class="glass-panel rounded-3xl max-w-2xl w-full max-h-[85vh] flex flex-col overflow-hidden border border-slate-800">
+            <div class="p-6 border-b border-slate-800 flex items-center justify-between">
+                <div>
+                    <h4 id="modalName" class="text-lg font-bold font-display text-white light:text-slate-900">User Detail Inspector</h4>
+                    <p id="modalMeta" class="text-xs text-slate-400"></p>
+                </div>
+                <button onclick="closeModal()" class="w-8 h-8 rounded-lg bg-slate-800 text-slate-400 hover:text-white flex items-center justify-center">
+                    <i class="fa-solid fa-xmark"></i>
+                </button>
+            </div>
+            <div id="modalContent" class="p-6 overflow-y-auto custom-scrollbar space-y-4"></div>
+        </div>
+    </div>
+
+    <!-- Toast Notification Container -->
+    <div id="toastContainer" class="fixed bottom-5 right-5 z-50 flex flex-col gap-3 pointer-events-none"></div>
+
+    <!-- Footer -->
+    <footer class="border-t border-slate-800/80 py-6 mt-12 dark:bg-slate-950/60 light:bg-slate-100">
+        <div class="max-w-7xl mx-auto px-4 text-center text-xs text-slate-500 flex flex-col sm:flex-row items-center justify-between gap-4">
+            <div class="flex items-center gap-2">
+                <i class="fa-solid fa-dumbbell text-orange-500"></i>
+                <span class="font-bold text-slate-400">FitBuddy UI/UX Showcase & Engine</span> &copy; 2026
+            </div>
+            <div class="flex items-center gap-4 text-slate-400">
+                <span>FastAPI + Gemini Flash UI Paradigm</span>
+                <span>•</span>
+                <span class="text-cyan-400"><i class="fa-solid fa-shield-halved"></i> Production Ready</span>
+            </div>
+        </div>
+    </footer>
+
+    <!-- App Logic Script -->
+    <script src="js/app.js"></script>
+</body>
+</html>
